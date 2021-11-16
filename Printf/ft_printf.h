@@ -6,7 +6,7 @@
 /*   By: gvarys <gvarys@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 11:11:37 by gvarys            #+#    #+#             */
-/*   Updated: 2021/11/11 10:14:23 by gvarys           ###   ########.fr       */
+/*   Updated: 2021/11/15 18:41:40 by gvarys           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 # include <stdarg.h>
 # include <stdlib.h>
 # include <unistd.h>
-# include <stdio.h>
 
 typedef struct s_print_info
 {
@@ -30,7 +29,6 @@ typedef struct s_print_info
 	int		total_length;
 	int		sign;
 	int		is_zero;
-	int		percent;
 	int		space;
 	int		hash;
 }	t_print_info;
@@ -63,5 +61,13 @@ int				IFNP(t_print_info *info, const char *format, int count);
 void			mini_if(t_print_info *info, int *number);
 void			if_if(t_print_info *info, int *number);
 void			print_percent(t_print_info *info);
+int				else_str(char *s, t_print_info *info);
+void			giga_if(t_print_info *info, int *number);
+void			hexup_help(t_print_info	*info, unsigned int hexup);
+void			hexal_help(t_print_info	*info, unsigned int hexal);
+void			number_if(int number, t_print_info *info);
+void			unsint_if(unsigned int unsint, t_print_info *info);
+void			wparg_help(t_print_info *info);
+int				IFP_help(t_print_info *info, const char *format, int count);
 
 #endif

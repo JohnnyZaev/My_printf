@@ -6,7 +6,7 @@
 /*   By: gvarys <gvarys@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/10 17:59:36 by gvarys            #+#    #+#             */
-/*   Updated: 2021/11/11 15:33:12 by gvarys           ###   ########.fr       */
+/*   Updated: 2021/11/15 18:23:12 by gvarys           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,7 @@ int	IFP(t_print_info *info, const char *format, int count)
 		}
 		else
 		{
-			while (check_format1(format, count))
-			{
-				info->precision = (info->precision * 10) + (format[count] - 48);
-				count++;
-			}
+			count = IFP_help(info, format, count);
 		}
 	}
 	return (count);
@@ -95,7 +91,6 @@ int	check_wp(t_print_info *info, const char *format, int count)
 int	check_wparg(t_print_info *info, const char *format, int count)
 {
 	int	width;
-	int	percision;
 
 	if (!info->point)
 	{
@@ -111,14 +106,7 @@ int	check_wparg(t_print_info *info, const char *format, int count)
 	}
 	else
 	{
-		percision = va_arg(info->args, int);
-		if (percision < 0)
-		{
-			info->precision = 0;
-			info->point = 0;
-		}
-		else
-			info->precision = percision;
+		wparg_help(info);
 		count++;
 	}
 	return (count);

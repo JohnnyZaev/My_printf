@@ -6,12 +6,11 @@
 /*   By: gvarys <gvarys@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 11:11:57 by gvarys            #+#    #+#             */
-/*   Updated: 2021/11/11 16:54:50 by gvarys           ###   ########.fr       */
+/*   Updated: 2021/11/16 14:42:59 by gvarys           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <stdio.h>
 
 t_print_info	*initialise_info(t_print_info *info)
 {
@@ -22,7 +21,6 @@ t_print_info	*initialise_info(t_print_info *info)
 	info->dash = 0;
 	info->sign = 0;
 	info->is_zero = 0;
-	info->percent = 0;
 	info->space = 0;
 	info->hash = 0;
 	return (info);
@@ -101,31 +99,3 @@ int	ft_printf(const char *format, ...)
 	free (info);
 	return (result);
 }
-
-// int main(void)
-// {
-// 	int		a = -4;
-// 	int		b = 0;
-// 	char	c = 'a';
-// 	int		d = 2147483647;
-// 	int		e = -2147483648;
-// 	int		f = 42;
-// 	int		g = 25;
-// 	int		h = 4200;
-// 	int		i = 8;
-// 	int		j = -12;
-// 	int		k = 123456789;
-// 	int		l = 0;
-// 	int		m = -12345678;
-// 	char	*n = "abcdefghijklmnop";
-// 	char	*o = "-a";
-// 	char	*p = "-12";
-// 	char	*q = "0";
-// 	char	*r = "%%";
-// 	char	*s = "-2147483648";
-// 	char	*t = "0x12345678";
-// 	char	*u = "-0";
-
-// 	ft_printf("{%1.d}\n", 0);
-// 	printf("{%1.d}\n", 0);
-// }

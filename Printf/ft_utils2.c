@@ -6,7 +6,7 @@
 /*   By: gvarys <gvarys@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/10 18:44:48 by gvarys            #+#    #+#             */
-/*   Updated: 2021/11/11 11:46:42 by gvarys           ###   ########.fr       */
+/*   Updated: 2021/11/15 17:31:52 by gvarys           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 int	ft_putstr(char *s, t_print_info *info)
 {
 	int		i;
-
 
 	i = 0;
 	if (!s)
@@ -30,22 +29,7 @@ int	ft_putstr(char *s, t_print_info *info)
 	}
 	else
 	{
-		if (info->point)
-		{
-			while (s[i] != '\0' && i != info->precision)
-			{
-				write(1, &s[i], 1);
-				i++;
-			}
-		}
-		else
-		{
-			while (s[i] != '\0')
-			{
-				write(1, &s[i], 1);
-				i++;
-			}
-		}
+		i = else_str(s, info);
 	}
 	return (i);
 }

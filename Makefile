@@ -8,6 +8,7 @@ SRCS		= Printf/ft_printf.c\
 			Printf/ft_utils2.c\
 			Printf/ft_prints2.c\
 			Printf/ft_utils3.c\
+			Printf/ft_utils4.c\
 
 OBJS		=$(SRCS:%.c=%.o)
 
@@ -30,11 +31,11 @@ all:		$(NAME)
 bonus:		$(NAME)
 
 clean:		
-			$(RM) $(OBJS) $(BONUS_OBJS)
+			$(RM) $(OBJS)
 
 fclean:		clean
 			$(RM) $(NAME)
 
-re:			clean all
+re:			fclean all
 
 .PHONY:		all clean fclean re
